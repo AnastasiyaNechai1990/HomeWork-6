@@ -5,15 +5,15 @@
 
 int[] myArray(string step)
 {
-    string[] elements = new string[10];
-    elements = step.Split(",");
-    int[] arrayMy = new int[elements.Length];
-    for (int i = 0; i < elements.Length; i++)
+    string[] elements = new string[10]; //создаем массив с строковым значением
+    elements = step.Split(","); // разделяем строку на массив подстрок
+    int[] arrayMy = new int[elements.Length]; // создаем новый пустой массив с целочисленным значением равный длинне имеющегося массива с строковым значением
+    for (int i = 0; i < elements.Length; i++) // перебираем элементы массива
     {
-        arrayMy[i] = int.Parse(elements[i]);
+        arrayMy[i] = int.Parse(elements[i]); //переносим элементы массива elements[i] в массив arrayMy[i], для того что бы изменить возвращаемое значение массива из строкового в целочисленное.
 
     }
-    return arrayMy;
+    return arrayMy; //возвращаем массив
 }
 
 int CountNumbers(int[] inpCount) // Функция CountNumbers возвращающая целочисленное значение, в которую передали параметр массив(int[] inpCount) с целочисленными значениями(int). 
@@ -31,12 +31,12 @@ int CountNumbers(int[] inpCount) // Функция CountNumbers возвраща
 
 void main()
 {
-    Console.WriteLine("Введите 10 чисел через запятую: ");
+    Console.WriteLine("Введите 10 чисел через запятую: "); // в консоли запрос для пользователя для введения чисел
 
-    string num = Console.ReadLine()!;
+    string num = Console.ReadLine()!; //записывем числа введенные с клавиатуры в переменную с строковым занчением
 
-    int[] inputCount = myArray(step: num);
-    int rez = CountNumbers(inpCount: inputCount);
+    int[] inputCount = myArray(step: num); //полученный в функции массив присваиваем переменной, чтобы использовать данный массив с элементами в функции CountNumbers
+    int rez = CountNumbers(inpCount: inputCount); // полученные значения в функции присваиваем переменной, для дальнейшего вывода в консоль.
     Console.Write($"Чисел больше ноля {rez}");
 }
 main();
